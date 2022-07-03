@@ -53,6 +53,7 @@ public class DemoBlazeCartPage {
     @FindBy (xpath = "//button[.='OK']")
     public WebElement purchaseConfOkBtn;
 
+    //For checking if table's body empty or not
     @FindBy(id = "tbodyid")
     public WebElement tableBody;
 

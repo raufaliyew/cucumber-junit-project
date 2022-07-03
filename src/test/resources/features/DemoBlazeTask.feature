@@ -1,30 +1,22 @@
+@DemoBlaze
 Feature: DemoBlaze task solution
 
   Background: User is on DemoBlaze main page
     Given User is on the DemoBlaze page
 
   @Test1
-  Scenario: Adding to cart Laptop item
-    When User navigates to "Laptops" category
-    And User selects "Sony vaio i5"
+  Scenario Outline: Adding to cart Laptop item
+    When User navigates to "<Category>" category
+    And User selects "<Product>"
     And User clicks Add to cart
     Then User should see Product added pop up notification and confirm it
+    Examples:
+      | Category | Product |
+      | Laptops  | Sony vaio i5 |
+      | Phones | Samsung galaxy s6 |
+      | Monitors | Apple monitor 24 |
 
   @Test2
-  Scenario: Adding to cart Phones item
-    When User navigates to "Phones" category
-    And User selects "Samsung galaxy s6"
-    And User clicks Add to cart
-    Then User should see Product added pop up notification and confirm it
-
-  @Test3
-  Scenario: Adding to cart Monitors item
-    When User navigates to "Monitors" category
-    And User selects "Apple monitor 24"
-    And User clicks Add to cart
-    Then User should see Product added pop up notification and confirm it
-
-  @Test4
   Scenario: Deleting Monitor item from cart
     When User navigates to Cart menu
     And User deletes "Apple monitor 24" from cart

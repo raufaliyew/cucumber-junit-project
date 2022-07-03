@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "@Test1 or @Test2 or @Test3 or @Test4"
+        tags = "@DemoBlaze"
 )
 public class CukesRunner {
 
