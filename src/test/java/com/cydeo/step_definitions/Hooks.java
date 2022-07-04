@@ -7,6 +7,8 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
+
+
     //cucumber before annotation applies before each scenario
     @Before
     public void setUp(){

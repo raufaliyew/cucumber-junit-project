@@ -5,7 +5,7 @@ Feature: DemoBlaze task solution
     Given User is on the DemoBlaze page
 
   @Test1
-  Scenario Outline: Adding to cart Laptop item
+  Scenario Outline: Adding to cart "<Category>" item
     When User navigates to "<Category>" category
     And User selects "<Product>"
     And User clicks Add to cart
