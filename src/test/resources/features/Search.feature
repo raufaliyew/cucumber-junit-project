@@ -8,7 +8,7 @@ Feature: Search
   Scenario: Google default title verification
     Then User should see Google in the title
 
-  @wip #work in progress
+  @wip @smoke #work in progress
   Scenario: Google title verification after search
     When User searches apple
     Then User should see apple in the title

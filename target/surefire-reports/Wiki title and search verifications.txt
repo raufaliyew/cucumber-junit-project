@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Wiki title and search verifications
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.456 s - in Wiki title and search verifications
