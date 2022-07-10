@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         glue = "com/cydeo/step_definitions",
         dryRun = false,
 //        monochrome = true,
-        tags = "@wiki",
+        tags = "@smoke",
         publish = true
 )
 public class CukesRunner {
