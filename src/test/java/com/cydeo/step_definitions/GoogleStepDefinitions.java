@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.GoogleSearchPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -36,7 +37,8 @@ public class GoogleStepDefinitions {
 
     @When("User searches apple")
     public void userSearchesApple() {
-
+        BrowserUtils.highlightElement(googleSearchPage.aboutLink);
+        BrowserUtils.waitFor(3);
         //sending value into search box using page object
         googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
     }
