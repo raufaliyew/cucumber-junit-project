@@ -4,11 +4,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
+    static String browser;
     private Driver() {
     }
 
@@ -22,11 +26,42 @@ public class Driver {
         if (driverPool.get() == null) {
 
 
+                if (System.getProperty("BROWSER") == null) {
+                    browser = ConfReader.getProperty("browser");
+                } else {
+                    browser = System.getProperty("BROWSER");
+                }
+                System.out.println("Browser: " + browser);
 
 
-                String browserType = ConfReader.getProperty("browser");
 
-                switch (browserType) {
+                switch (browser) {
+                    case "remote-chrome":
+                        try {
+                            // assign your grid server address
+                            String gridAddress = "34.239.109.113";
+                            URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                            DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                            desiredCapabilities.setBrowserName("chrome");
+                            driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
+
+                    case "remote-firefox":
+
+                        try {
+                            // assign your grid server address
+                            String gridAddress = "52.90.101.317";
+                            URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                            DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                            desiredCapabilities.setBrowserName("firefox");
+                            driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
                         driverPool.set(new ChromeDriver());
