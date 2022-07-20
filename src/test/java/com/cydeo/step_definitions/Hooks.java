@@ -22,7 +22,7 @@ public class Hooks {
             byte[] screenShots = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenShots, "image/png", scenario.getName());
         }
-        Driver.closeDriver();
+//        Driver.closeDriver();
 
     }
 

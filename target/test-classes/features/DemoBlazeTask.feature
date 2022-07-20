@@ -1,4 +1,4 @@
-@DemoBlaze
+@regression
 Feature: DemoBlaze task solution
 
   Background: User is on DemoBlaze main page
@@ -26,21 +26,3 @@ Feature: DemoBlaze task solution
     And User verifies amount is correct
     And User clicks Ok
     Then User should see there is no product in the cart
-
-
-
-
-
-
-#  • Customer navigation through product categories: Phones, Laptops and Monitors
-#  • Navigate to "Laptops" → "Sony vaio i5" and click on "Add to cart". Accept pop up confirmation.
-#  • Navigate to "Phones" → "Samsung galaxy s6" and click on "Add to cart". Accept pop up confirmation.
-#  • Navigate to "Monitors" → "Apple monitor 24" and click on "Add to cart". Accept pop up confirmation.
-#  • Navigate to "Cart" → Delete "Apple monitor 24" from cart.
-#  • Click on "Place order".
-#  • Fill in all web form fields.
-#  • Click on "Purchase"
-#  • Capture and log purchase Id and Amount.
-#  • Assert purchase amount equals expected.
-#  • Click on "Ok"
-#  • Verify that there is no product in the cart
